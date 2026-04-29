@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> | <%= siteName %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="/" class="brand" aria-label="3rd Cavalry Regiment home">
+        <img src="/public/assets/logo-hero.jpg" alt="3rd Cavalry Regiment logo" width="400" height="400" loading="lazy">
+        <span><strong><%= siteName %></strong><small><%= motto %></small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Primary">
+        <a class="<%= currentPath === '/' ? 'active-link' : '' %>" href="/">Home</a>
+        <a class="<%= currentPath === '/roster' ? 'active-link' : '' %>" href="/roster">Roster</a>
+        <a class="<%= currentPath === '/medals' ? 'active-link' : '' %>" href="/medals">Medals</a>
+        <a class="<%= currentPath === '/forum' ? 'active-link' : '' %>" href="/forum">Forum</a>
+        <a class="<%= currentPath === '/mos' ? 'active-link' : '' %>" href="/mos">MOS</a>
+        <a class="<%= currentPath === '/about' ? 'active-link' : '' %>" href="/about">Biography</a>
+        <% if (currentUser) { %>
+          <form action="/logout" method="post" style="display:inline-flex;"><button class="nav-cta" type="submit">Logout</button></form>
+        <% } else { %>
+          <a class="nav-cta" href="/login">Login</a>
+        <% } %>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch theme"></button>
+        <button class="mobile-toggle" data-mobile-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu" data-mobile-menu>
+      <div class="container mobile-menu-inner">
+        <a href="/">Home</a>
+        <a href="/roster">Roster</a>
+        <a href="/medals">Medals</a>
+        <a href="/forum">Forum</a>
+        <a href="/mos">MOS</a>
+        <a href="/about">Biography</a>
+        <% if (currentUser) { %>
+          <form action="/logout" method="post"><button class="btn btn-primary" type="submit">Logout</button></form>
+        <% } else { %>
+          <a href="/login">Login</a>
+        <% } %>
+      </div>
+    </div>
+  </header>
+  <main id="main-content">

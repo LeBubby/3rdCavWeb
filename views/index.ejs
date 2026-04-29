@@ -1,0 +1,33 @@
+<%- include('partials/header', { title: 'Home', siteName, motto, currentPath, currentUser }) %>
+<section class="hero section">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">Brave Rifles • Serious-Relaxed Milsim • Stryker Cavalry</p>
+      <h1>3rd Cavalry Regiment</h1>
+      <p class="hero-tagline"><%= motto %></p>
+      <p class="hero-text">A regiment-focused community site built to feel more like a formal unit homepage, complete with separate sections for awards, roster, MOS selection, and a working login-backed forum.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="<%= discord %>" target="_blank" rel="noopener noreferrer">Join the Regiment</a>
+        <a class="btn btn-secondary" href="/forum">Open Forum</a>
+      </div>
+    </div>
+    <aside class="hero-panel">
+      <h2>Operational Summary</h2>
+      <ul>
+        <li><span>Status</span><strong>Recruiting Open</strong></li>
+        <li><span>Communications</span><strong>TFAR + TeamSpeak</strong></li>
+        <li><span>Structure</span><strong>Rank • ORBAT • MOS</strong></li>
+        <li><span>Forum Access</span><strong>Login Enabled</strong></li>
+      </ul>
+    </aside>
+  </div>
+</section>
+<section class="section surface">
+  <div class="container two-col">
+    <div><p class="eyebrow">Website Upgrade</p><h2>Now a true Node-based app.</h2></div>
+    <div><p>This version moves beyond a static landing page and adds account-based access plus live post creation through Node, Express sessions, and a SQLite database backend.[web:83][web:87]</p><p>The homepage still keeps the military presentation style, but the site now supports multiple routes and user-generated forum content.[page:2]</p></div>
+  </div>
+</section>
+<section class="section"><div class="container feature-band"><div><p class="eyebrow">Deployment Focus</p><h2>Recon first, assault when required.</h2><p>The regiment identity you provided emphasizes reconnaissance, mechanized assaults, and theater-wide operations, which fits a Stryker cavalry presentation well.[cite:58]</p></div><div class="visual-card"><img src="/public/assets/hero-stryker.jpg" alt="Stryker vehicle artwork" width="1920" height="400" loading="lazy"></div></div></section>
+<section class="section surface-alt"><div class="container stats-grid"><div class="stat-box"><span>1846</span><small>Mounted rifle lineage</small></div><div class="stat-box"><span>2011</span><small>Stryker redesignation</small></div><div class="stat-box"><span>SQLite</span><small>Forum backend</small></div><div class="stat-box"><span>Login</span><small>Session auth</small></div></div></section>
+<%- include('partials/footer', { siteName, motto }) %>
